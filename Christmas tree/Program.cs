@@ -20,7 +20,7 @@ namespace Christmas_tree
             Console.WriteLine();
 
             Console.WriteLine("fill in the matrix");
-
+            /// Ввод матрицы
             for(int j =0; j<y; j++)
             {
                 for (int i=0; i<x; i++)
@@ -30,6 +30,8 @@ namespace Christmas_tree
                 }
             }
             Console.WriteLine();
+
+            /// Вывод матрицы построчно для контроля правильности ввода
             for (int j = 0; j<y; j++)
             {
                 for (int i = 0; i < x; i++)
@@ -46,11 +48,11 @@ namespace Christmas_tree
                 {
                     if (massive[i,j] == '*')
                     {
-                        n++;
+                        n++;  // ищем количество звезд
                     }
                     massive[i, j] = '-';
                 }
-                if (n == 1)
+                if (n == 1) // если в строке одна звезда, то ставим ее в середину строки
                 {
                     int i = x / 2;
                     massive[i, j] = '*';
@@ -60,9 +62,9 @@ namespace Christmas_tree
                     double Q = Convert.ToDouble(x);
                     double W = Convert.ToDouble(n);
                     Q = Math.Round(Q / W);
-                    int k = Convert.ToInt32(Q);
+                    int k = Convert.ToInt32(Q); // к - это номер столбца в строке, с которого нужно начать стовить * в количестве n штук
                    
-                    //k = k + 1;
+                  
                     for(int i=k; n>0; i++)
                     {
                         massive[i, j] = '*';
@@ -73,7 +75,7 @@ namespace Christmas_tree
                 n = 0;
             }
 
-            Console.WriteLine("Calculation result: ");
+            Console.WriteLine("Calculation result: "); // выводим измененную матрицу
             for (int j = 0; j < y; j++)
             {
                 for (int i = 0; i < x; i++)
